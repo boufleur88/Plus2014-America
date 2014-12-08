@@ -1,3 +1,9 @@
+/* 
+ * en movil no existen el hover.
+ * css3-strick = guía para css3.
+ * webkit = render del chrome.
+ * */
+
 @font-face {
 	font-family: 'icomoon';
 	src:url('fonts/icomoon.eot?6abatc');
@@ -246,4 +252,26 @@ nav ul #publicar_nav a:hover{
 	#contenido .item:nth-child(odd){
 		margin-right: 2%;
 	}
+}
+
+/*
+	FORMULARIOS
+*/
+.formulario{
+	padding: 1em;
+	text-align: right;
+	display: none;
+}
+
+.formulario input{
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 0.2em 0.6em;
+}
+
+.formulario input[type="submit"]{
+	border-radius: 5px;
+	background: #767177;
+	font-style: italic;
+	color: white;
 }

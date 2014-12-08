@@ -3,11 +3,23 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="description" content="Proyecto de la primera generación del 2014 del curso de diseño web online" />
-	<meta name="viewport" content="device-width minimum-scale=1, maximum-scale=1" />
+	<meta name="viewport" content="width=device-width minimum-scale=1, maximum-scale=1" />
 	<title> CBS INFORMATICA 2014: Tecnologia a tu alcance </title>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<!-- siempre primero debe ir normalize que tus hojas de estiolo, porque cada navegador tiene diseños por defecto para cada etiqueta y para esto se utliza
+	normalize para solucionar el inconveniente- 
+	Retina display, debemos tener nuestras imagenes en el doble de tamaño que la queremos mostrar, y luego modificar el tamaño con width 
+	http://www.cristalab.com/blog/que-significa-retina-display-en-el-diseno-web-c108299l/ = post sobre retina display
+	CSS - todos los atributos van en orden alfabetico, *. Pre-render, etiquetas, ids, clases
+	La letra es más legible en un color gris oscuro cuando tenemos un fondo blanco. 
+	Con “em” se toma el valor de fuente más cercano, mientras “rem” toma el valor de fuente del body o por default.
+	Tipografias: EOT, SVG, TTF, WOFF (fontsquirrel.com), woff es la extención utilizada por los nuevos navegadores
+	Post = envia los datos en el request. Recomendado para 
+	Get = envia los datos por url.
+	-->
 	<link rel="stylesheet" href="css/normalize.css" />
 	<link rel="stylesheet" href="css/estilos.css" />
+	<script src="prefixfree.js"></script>
 </head>
 <body>
 	<header>
@@ -29,10 +41,17 @@
 			<li><a href="#">Productos</a></li>
 			<li><a href="#">Contactos</a></li>
 			<li id="publicar_nav">
-				<a href="#" class="icon-pencil">Publicar</a>
+				<a href="#" id="mostrar-form" class="icon-pencil">Publicar</a>
 			</li>
 		</ul>
 	</nav>
+	<!-- Formulario -->
+	<form action="" id="formulario" class="formulario"> 
+		<input type="text" id="titulo" placeholder="Titulo" required />
+		<input type="url" id="url" placeholder="Link" required />
+		<input type="submit" value="Agregar" />
+	</form>
+	
 	<section id="contenido">
 		<article class="item">
 			<figure class="imagen_item">
@@ -199,6 +218,8 @@
 			CBS INFORMATICA 2014
 		</p>
 	</footer>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="js/formulario.js"></script>
 </body>
 </html>
 
