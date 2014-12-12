@@ -5,9 +5,9 @@
 	<meta name="description" content="Proyecto de la primera generación del 2014 del curso de diseño web online" />
 	<meta name="viewport" content="width=device-width minimum-scale=1, maximum-scale=1" />
 	<title> CBS INFORMATICA 2014: Tecnologia a tu alcance </title>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	<!-- siempre primero debe ir normalize que tus hojas de estiolo, porque cada navegador tiene diseños por defecto para cada etiqueta y para esto se utliza
-	normalize para solucionar el inconveniente- 
+	<!-- ><link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	Siempre primero debe ir normalize que tus hojas de estiolo, porque cada navegador tiene diseños por defecto para cada etiqueta y para esto se utliza
+	Normalize para solucionar el inconveniente- 
 	Retina display, debemos tener nuestras imagenes en el doble de tamaño que la queremos mostrar, y luego modificar el tamaño con width 
 	http://www.cristalab.com/blog/que-significa-retina-display-en-el-diseno-web-c108299l/ = post sobre retina display
 	CSS - todos los atributos van en orden alfabetico, *. Pre-render, etiquetas, ids, clases
@@ -16,10 +16,11 @@
 	Tipografias: EOT, SVG, TTF, WOFF (fontsquirrel.com), woff es la extención utilizada por los nuevos navegadores
 	Post = envia los datos en el request. Recomendado para 
 	Get = envia los datos por url.
+	<script src="prefixfree.js"></script>
 	-->
 	<link rel="stylesheet" href="css/normalize.css" />
 	<link rel="stylesheet" href="css/estilos.css" />
-	<script src="prefixfree.js"></script>
+	
 </head>
 <body>
 	<header>
@@ -51,7 +52,12 @@
 		<input type="url" id="url" placeholder="Link" required />
 		<input type="submit" value="Agregar" />
 	</form>
-	
+	<aside>
+		<div id="geo"></div>
+	</aside>
+
+	</section>
+
 	<section id="contenido">
 		<article class="item">
 			<figure class="imagen_item">
@@ -220,6 +226,16 @@
 	</footer>
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script src="js/formulario.js"></script>
+	<script src="js/geo.js"></script>
+	<script>
+		window.onload = function(){
+			console.log("Ya se disparo el evento OnLoad");
+		}
+
+		$(function(){
+			console.log('Ya se disparó el evento DOMComentLoaded');
+		});
+	</script>
 </body>
 </html>
 

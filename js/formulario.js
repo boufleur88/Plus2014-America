@@ -2,12 +2,25 @@ var $form = $('#formulario'),
 	$titulo = $('#titulo'),
 	$url = $('#url'),
 	$button = $('#mostrar-form'),
-	$list = $('#contenido'),
+	$lista = $('#contenido'),
 	$post = $('.item').first();
 
 
+// precargar lo que tengo en memoria
+if (localStorage.getItem('autosave')){
+	$titulo.val(sessionStorage.getItem('titulo'));
+	$url.val(sessionStorage.getItem('url'));
+}
+
+// 
+var id = setInterval(function(){
+	sessionStorage.setItem('titulo', $titulo.val());
+	sessionStorage.setItem('url', $url.val());
+}, 1000);
+
 function mostrarFormulario(){
 	$form.slideToggle();
+	$lista.slideToggle();
 	return false;
 }
 
@@ -22,13 +35,13 @@ function agregarPost(){
 
 	$clone.hide();
 
-	$list.prepend($clone);
-
+	$lista.prepend($clone);
+	mostrarFormulario();
 	$clone.fadeIn();
-
 	return false;
 }
 
 // Eventos
 $button.click( mostrarFormulario );
 $form.on('submit', agregarPost );
+
